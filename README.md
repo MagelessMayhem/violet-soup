@@ -1,13 +1,5 @@
-# violet-funk
+# violet-soup
 
-Gentoo ebuild overlay based around FNF, with miscellaneous useful software as a bonus.
+This is an overlay which contains upstream changes to be potentially pushed to violet-funk. It is strongly advised not to use this overlay on a production machine, hence why it is unavailable via eselect.
 
-The mods in this overlay are *currently* binaries; the base game, however, is a source ebuild. The mods are currently being migrated to source ebuilds, so do expect some rockiness during the process.
-
-This repository can be enabled using either:
-
-`sudo eselect repository enable violet-funk` (if you are using `app-eselect/eselect-repository`)
-
-`sudo layman -a violet-funk` (if you are using `app-portage/layman`)
-
-I accept (almost) any suggestions as to which mods to port and/or include in this overlay. You may open an issue with the mod to suggest ***granted it has accessible source code.*** Please include the link to the mod's source code when suggesting a mod.
+You may fork this repository and make pull requests for anything you may think would improve certain ebuilds. Contribution to this overlay is greatly welcomed and all changes will be thoroughly tested before being pushed to violet-funk.
