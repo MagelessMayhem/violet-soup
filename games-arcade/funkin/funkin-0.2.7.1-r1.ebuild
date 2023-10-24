@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit check-reqs desktop hxcpp xdg-utils
+inherit desktop lime xdg-utils
 
 DESCRIPTION="A rhythm game made with HaxeFlixel"
 HOMEPAGE="https://github.com/FunkinCrew/Funkin"
@@ -80,15 +80,6 @@ BDEPEND="
 	sys-devel/binutils
 "
 
-CHECKREQS_DISK_BUILD="2000M"
-CHECKREQS_DISK_VAR="2700M"
-CHECKREQS_DISK_USR="350M"
-
-
-pkg_setup() {
-	check-reqs_pkg_setup
-}
-
 src_unpack() {
 	unpack Funkin-VF.tar.gz
 	if use utau; then
@@ -121,7 +112,7 @@ src_prepare() {
 	haxelib install ${LIBDIR}/flixel-templates-2,6,6.zip
 	haxelib install ${LIBDIR}/flixel-demos-2,9,0.zip
 
-	hxcpp_src_prepare
+	lime_src_prepare
 }
 
 src_compile() {
@@ -132,14 +123,14 @@ src_compile() {
 
 	if use !lime-release; then
 		if use lime-debug; then
-			HXCPP_LIME_TARGET="debug"
-			hxcpp_src_compile
+			LIME_TARGET="debug"
+			lime_src_compile
 		elif use lime-final; then
-			HXCPP_LIME_TARGET="final"
-			hxcpp_src_compile
+			LIME_TARGET="final"
+			lime_src_compile
 		fi
 	else
-		hxcpp_src_compile
+		lime_src_compile
 	fi
 }
 src_install() {
