@@ -38,7 +38,7 @@ src_install() {
 	doins -r ${WORKDIR}/export/release/linux/bin
 	doexe ${WORKDIR}/export/release/linux/bin/Funkin
 	# This part is necessary because the game cannot access its assets if it is run outside of its home directory
-	echo "#!/bin/bash\n( cd /usr/share/games/Funkin/bin; ./Funkin )" > ${WORKDIR}/funkin
+	echo -e "#!/bin/bash\n( cd /usr/share/games/Funkin/bin; ./Funkin )" > ${WORKDIR}/funkin
 	dobin ${WORKDIR}/funkin
 	make_desktop_entry /usr/bin/funkin "Friday Night Funkin'"
 }
