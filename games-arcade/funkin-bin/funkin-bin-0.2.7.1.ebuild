@@ -13,7 +13,7 @@ SRC_URI="
 	https://github.com/MagelessMayhem/Funkin/releases/download/${PV}/funkin-bin.tar.gz -> ${P}.tar.gz
 	utau? ( https://github.com/MagelessMayhem/Funkin/releases/download/v0.2.7.1u/utau-covers.tar.gz )
 "
-
+S="${WORKDIR}"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
