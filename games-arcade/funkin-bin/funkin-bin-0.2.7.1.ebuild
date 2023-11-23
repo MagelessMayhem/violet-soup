@@ -43,9 +43,9 @@ src_install() {
 	make_desktop_entry /usr/bin/funkin "Friday Night Funkin'"
 }
 pkg_postinst() {
-	xdg_update_desktop_database
+	xdg_desktop_database_update
 }
 pkg_postrm() {
-	xdg_update_desktop_database
+	xdg_desktop_database_update
 }
 
