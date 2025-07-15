@@ -46,19 +46,19 @@ RESTRICT="strip"
 IUSE="
 	+X
 	+alsa
-	+lime_build_target_debug
-	lime_build_target_final
-	lime_build_target_release
+	+lime_target_debug
+	lime_target_final
+	lime_target_release
 	pulseaudio
 	utau
 "
 REQUIRED_USE="
 	X
 	alsa
-	|| ( lime_build_target_debug lime_build_target_final lime_build_target_release )
-	lime_build_target_debug? ( !lime_build_target_final !lime_build_target_release )
-	lime_build_target_final? ( !lime_build_target_debug !lime_build_target_release )
-	lime_build_target_release? ( !lime_build_target_debug !lime_build_target_final )
+	|| ( lime_target_debug lime_target_final lime_target_release )
+	lime_target_debug? ( !lime_target_final !lime_target_release )
+	lime_target_final? ( !lime_target_debug !lime_target_release )
+	lime_target_release? ( !lime_target_debug !lime_target_final )
 "
 # Any desktop profile should already have libX11 and alsa-lib installed.
 

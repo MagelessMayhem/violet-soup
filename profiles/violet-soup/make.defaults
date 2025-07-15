@@ -1,0 +1,4 @@
+# Possible values for the USE_EXPAND variable LIME_BUILD_TARGET
+
+USE_EXPAND="LIME_TARGET"
+USE_EXPAND_VALUES_LIME_TARGET="debug final release"
