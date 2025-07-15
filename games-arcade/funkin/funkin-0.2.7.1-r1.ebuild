@@ -64,7 +64,6 @@ REQUIRED_USE="
 RDEPEND="
 	X? ( x11-libs/libX11 )
 	alsa? ( media-libs/alsa-lib )
-	pulseaudio? ( media-sound/pulseaudio )
 "
 DEPEND="
 	${RDEPEND}
