@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit desktop lime xdg-utils
+inherit desktop hxcpp xdg-utils
 
 # Note: Psych Engine mods aren't known for Linux compatibility, but this one seems to work just fine
 
@@ -31,7 +31,7 @@ REQUIRED_USE="
 	lime-release? ( !lime-debug !lime-final )
 "
 
-# lime.eclass pulls in Haxe for us
+# hxcpp.eclass pulls in Haxe for us
 
 DEPEND="
 x11-libs/libX11
@@ -45,7 +45,7 @@ src_prepare() {
 	eapply_user
 
 	haxelib setup ${S}/.haxelib
-	lime_src_prepare
+	hxcpp_src_prepare
 
 }
 
@@ -55,19 +55,20 @@ src_compile() {
 
 	if use !lime-release; then
 		if use lime-debug; then
-			LIME_TARGET="debug"
-			lime_src_compile
+			HXCPP_LIME_TARGET="debug"
+			hxcpp_src_compile
 		elif use lime-final; then
-			LIME_TARGET="final"
-			lime_src_compile
+			HXCPP_LIME_TARGET="final"
+			hxcpp_src_compile
 		fi
 	else
-		lime_src_compile
+		hxcpp_src_compile
 	fi
 
 }
 
 src_install() {
+	
 	keepdir "/usr/share/games/VsMokey"
 	insinto "/usr/share/games/VsMokey"
 	exeinto "/usr/share/games/VsMokey/bin"
