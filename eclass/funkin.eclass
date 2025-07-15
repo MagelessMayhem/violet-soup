@@ -28,7 +28,7 @@ BDEPEND="dev-lang/haxe"
 # @DESCRIPTION:
 # A variable which defines the build target for Lime, the project manager used to build the game.
 # Lime uses the value of this variable to pass appropriate compilation instructions to HXCPP.
-# Available values are debug, final, and release, which are also defined in the LIME_BUILD_TARGET USE_EXPAND variable.
+# Available values are debug, final, and release, which are also defined in the LIME_TARGET USE_EXPAND variable.
 # If this variable is left unset by the developer, release will be used.
 : "${FUNKIN_LIME_TARGET:=release}"
 

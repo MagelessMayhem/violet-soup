@@ -43,14 +43,13 @@ RESTRICT="strip"
 # FNF requires X AT MINIMUM to compile properly (since it uses libX11.so).
 # alsa is enabled because FNF is a rhythm game and you'd be insane to play a rhythm game without sound.
 
-LIME_TARGETS="debug final release"
-
 IUSE="
 	+X
 	+alsa
-	pulseaudio
 	utau
-	$(printf 'lime_target_%s ' ${LIME_TARGETS})
+	+lime_target_release
+	lime_target_debug
+	lime_target_final
 "
 REQUIRED_USE="
 	X
@@ -120,11 +119,11 @@ src_compile() {
 		cp -r "${WORKDIR}/assets/songs/" "${S}/assets/"
 	fi
 
-	if use !lime_build_target_release; then
-		if use lime_build_target_debug; then
+	if use !lime_target_release; then
+		if use lime_target_debug; then
 			FUNKIN_LIME_TARGET="debug"
 			funkin_src_compile
-		elif use lime-final; then
+		elif use lime_target_final; then
 			FUNKIN_LIME_TARGET="final"
 			funkin_src_compile
 		fi
@@ -136,7 +135,7 @@ src_install() {
 	keepdir "/usr/share/games/Funkin"
 	insinto "/usr/share/games/Funkin"
 	exeinto "/usr/share/games/Funkin/bin"
-	if use lime_build_target_debug; then
+	if use lime_target_debug; then
 		doins -r "${S}/export/debug/linux/bin"
 		doexe "${S}/export/debug/linux/bin/Funkin"
 	else
