@@ -43,14 +43,14 @@ RESTRICT="strip"
 # FNF requires X AT MINIMUM to compile properly (since it uses libX11.so).
 # alsa is enabled because FNF is a rhythm game and you'd be insane to play a rhythm game without sound.
 
+LIME_TARGETS="debug final release"
+
 IUSE="
 	+X
 	+alsa
-	+lime_target_debug
-	lime_target_final
-	lime_target_release
 	pulseaudio
 	utau
+	$(printf 'lime_target_%s ' ${LIME_TARGETS})
 "
 REQUIRED_USE="
 	X
