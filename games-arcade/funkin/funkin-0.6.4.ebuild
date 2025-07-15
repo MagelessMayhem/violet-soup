@@ -19,6 +19,14 @@ IUSE="
 +alsa
 +lime_target_release
 lime_target_debug
+funkin_features_github_build
+funkin_features_polymod_mods
+funkin_features_discord_rpc
++funkin_features_video_playback
+funkin_features_chart_editor
++funkin_features_screenshots
+funkin_features_stage_editor_experimental
+funkin_features_ghost_tapping_experimental
 "
 REQUIRED_USE="
 X
@@ -26,6 +34,8 @@ alsa
 || ( lime_target_debug lime_target_release )
 lime_target_debug? ( !lime_target_release )
 lime_target_release? ( !lime_target_debug )
+funkin_features_github_build? ( lime_target_debug )
+funkin_features_chart_editor? ( lime_target_debug )
 "
 
 DEPEND="
