@@ -22,7 +22,7 @@ _FUNKIN_ECLASS=1
 
 fi
 
-BDEPEND="dev-lang/haxe"
+BDEPEND="dev-lang/haxe-bin"
 
 # @ECLASS_VARIABLE: FUNKIN_LIME_TARGET
 # @DESCRIPTION:
