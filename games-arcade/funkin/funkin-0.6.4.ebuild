@@ -74,7 +74,9 @@ src_unpack() {
 
 	unpack funkin-VF_source.7z
 	unpack funkin-VF_haxelib_other.7z
+	mv ${WORKDIR}/.haxelib ${S}
 	unpack funkin-VF_haxelib_lime.7z
+	mv ${WORKDIR}/lime ${S}/.haxelib
 }
 
 src_prepare() {
