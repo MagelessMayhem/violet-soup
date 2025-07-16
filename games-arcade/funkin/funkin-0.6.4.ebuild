@@ -77,6 +77,7 @@ src_unpack() {
 	mv ${WORKDIR}/haxelib/.haxelib ${S}
 	unpack_7z funkin-VF_haxelib_lime.7z
 	mkdir ${S}/.haxelib/lime && mv ${WORKDIR}/lime/git ${S}/.haxelib/lime
+	mv ${WORKDIR}/lime/.current ${S}/.haxelib/lime
 }
 
 src_prepare() {
