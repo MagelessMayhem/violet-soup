@@ -94,9 +94,9 @@ funkin_src_compile() {
 
 	fi
 	if [[ $FUNKIN_LIME_TARGET == "release" ]] ; then
-		HXCPP_COMPILE_THREADS=${HXCPP_JOBS} haxelib run lime build linux -v
+		HXCPP_COMPILE_THREADS=${HXCPP_JOBS} haxelib run lime build linux -v ${FUNKIN_OPTIONS}
 	else
-		HXCPP_COMPILE_THREADS=${HXCPP_JOBS} haxelib run lime build linux -v -debug
+		HXCPP_COMPILE_THREADS=${HXCPP_JOBS} haxelib run lime build linux -v -debug ${FUNKIN_OPTIONS}
 	fi
 
 }

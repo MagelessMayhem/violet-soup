@@ -74,9 +74,9 @@ src_unpack() {
 
 	unpack_7z funkin-VF_source.7z
 	unpack_7z funkin-VF_haxelib_other.7z
-	mv ${WORKDIR}/.haxelib ${S}
+	mv ${WORKDIR}/haxelib/.haxelib ${S}
 	unpack_7z funkin-VF_haxelib_lime.7z
-	mv ${WORKDIR}/lime ${S}/.haxelib
+	mkdir ${S}/.haxelib/lime && mv ${WORKDIR}/lime/git ${S}/.haxelib/lime
 }
 
 src_prepare() {
@@ -90,7 +90,7 @@ src_prepare() {
 }
 
 src_compile() {
-	# The most complex function in the entire ebuild (lol)
+	# The most complex function in the entire ebuild, funny enough
 	# To account for the FUNKIN_FEATURES USE flags, compiler options need to be added
 	# Technically spaghetti code but there is unfortunately no better way to approach this
 
