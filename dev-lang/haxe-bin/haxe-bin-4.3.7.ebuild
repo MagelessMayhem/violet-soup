@@ -37,7 +37,7 @@ src_install() {
 
 	into "/usr/bin"
 	dobin ${S}/haxe
-	dobin ${S}/haxebin
+	dobin ${S}/haxelib
 
 	into "/etc/env.d"
 	echo "HAXE_STD_PATH=/usr/lib/haxe/std" > ${S}/00haxe
