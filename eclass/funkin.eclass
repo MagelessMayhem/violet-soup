@@ -28,9 +28,16 @@ BDEPEND="dev-lang/haxe"
 # @DESCRIPTION:
 # A variable which defines the build target for Lime, the project manager used to build the game.
 # Lime uses the value of this variable to pass appropriate compilation instructions to HXCPP.
-# Available values are debug, final, and release, which are also defined in the LIME_TARGET USE_EXPAND variable.
+# Available values are debug and release, which are also defined in the LIME_TARGET USE_EXPAND variable.
 # If this variable is left unset by the developer, release will be used.
 : "${FUNKIN_LIME_TARGET:=release}"
+
+# @ECLASS_VARIABLE: FUNKIN_OPTIONS
+# @DESCRIPTION:
+# Added to accompany game version 0.6.4, this is a variable which defines compiler options to pass.
+# This variable should be set in the ebuild using FUNKIN_FEATURES USE flags.
+# The games-arcade/funkin ebuild demonstrates its usage in the src_compile() phase.
+: "${FUNKIN_OPTIONS:=""}"
 
 # @FUNCTION: funkin_src_prepare
 # @DESCRIPTION:
@@ -86,10 +93,10 @@ funkin_src_compile() {
 		HXCPP_JOBS=$(cut -c 3- <<< "${BASH_REMATCH[0]}")
 
 	fi
-	if [[ ! -z ${HXCPP_JOBS} ]] ; then
-		HXCPP_COMPILE_THREADS=${HXCPP_JOBS} haxelib run lime build linux -v -${FUNKIN_LIME_TARGET}
+	if [[ $FUNKIN_LIME_TARGET == "release" ]] ; then
+		HXCPP_COMPILE_THREADS=${HXCPP_JOBS} haxelib run lime build linux -v
 	else
-		haxelib run lime build linux -v -${FUNKIN_LIME_TARGET}
+		HXCPP_COMPILE_THREADS=${HXCPP_JOBS} haxelib run lime build linux -v -debug
 	fi
 
 }
