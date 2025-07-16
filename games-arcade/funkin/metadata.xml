@@ -3,14 +3,20 @@
 <pkgmetadata>
 	<maintainer type="person">
 		<email>MagelessMayhem@protonmail.com</email>
+		<name>Sebastian France</name>
 	</maintainer>
 	<use>
 		<flag name="X">Pull in X and its dependencies to be able to run the game.</flag>
 		<flag name="alsa">Enable basic audio support. Useful for most sessions.</flag>
-		<flag name="lime-debug">Tell Lime to build the debug target.</flag>
-		<flag name="lime-final">Tell Lime to build the final target.</flag>
-		<flag name="lime-release">Tell Lime to build the release target.</flag>
-		<flag name="pulseaudio">Enable PulseAudio support; useful for desktop sessions. This will override the alsa USE flag.</flag>
-		<flag name="utau">Override the standard songs with covers synthesized using UTAU/OpenUTAU software.</flag>
+		<flag name="funkin_features_github_build">Determine whether to build the GitHub debug version of the game; requires lime_target_debug to be enabled. (default: no)</flag>
+		<flag name="funkin_features_polymod_mods">Determine whether to enable Polymod modding support. (default: no)</flag>
+		<flag name="funkin_features_discord_rpc">Determine whether to enable Discord RPC support. (default: no)</flag>
+		<flag name="funkin_features_video_playback">Determine whether to enable video playback for cutscenes. Requires VLC to be installed. (default: yes)</flag>
+		<flag name="funkin_features_chart_editor">Determine whether to enable the chart editor; requires lime_target_debug to be enabled. (default: no)</flag>
+		<flag name="funkin_features_screenshots">Determine whether to enable support for taking in-game screenshots. (default: yes)</flag>
+		<flag name="funkin_features_stage_editor_experimental">Determine whether to enable the experimental stage editor. (default: no)</flag>
+		<flag name="funkin_features_ghost_tapping_experimental">Determine whether to enable ghost tapping. (default: no)</flag>
+		<flag name="lime_target_debug">Build the debug version of the game.</flag>
+		<flag name="lime_target_release">Build the normal release version of the game.</flag>
 	</use>
 </pkgmetadata>

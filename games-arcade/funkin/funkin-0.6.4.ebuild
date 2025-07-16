@@ -53,8 +53,11 @@ media-libs/libjpeg-turbo
 media-libs/openal
 "
 RDEPEND="${DEPEND}"
+
+# Current Haxe fails to compile, using this overlay's binaries until Gentoo's is fixed
+
 BDEPEND="
-dev-lang/haxe
+dev-lang/haxe-bin
 app-arch/p7zip
 funkin_features_video_playback? ( media-video/vlc )
 "
