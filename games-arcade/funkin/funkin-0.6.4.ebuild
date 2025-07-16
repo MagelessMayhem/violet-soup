@@ -72,10 +72,10 @@ pkg_setup() {
 src_unpack() {
 	# These need to be unpacked in order
 
-	unpack funkin-VF_source.7z
-	unpack funkin-VF_haxelib_other.7z
+	unpack_7z funkin-VF_source.7z
+	unpack_7z funkin-VF_haxelib_other.7z
 	mv ${WORKDIR}/.haxelib ${S}
-	unpack funkin-VF_haxelib_lime.7z
+	unpack_7z funkin-VF_haxelib_lime.7z
 	mv ${WORKDIR}/lime ${S}/.haxelib
 }
 
