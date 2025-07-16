@@ -152,7 +152,7 @@ src_install() {
 	keepdir "/usr/share/games/Funkin"
 	insinto "/usr/share/games/Funkin"
 	exeinto "/usr/share/games/Funkin/bin"
-	if use lime-debug; then
+	if use lime_target_debug; then
 		doins -r "${S}/export/debug/linux/bin"
 		doexe "${S}/export/debug/linux/bin/Funkin"
 	else

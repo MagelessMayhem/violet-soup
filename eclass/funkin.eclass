@@ -85,6 +85,7 @@ funkin_src_prepare() {
 
 funkin_src_compile() {
 
+	haxelib list
 	# Default value if -jn is not found in the following conditional
 	HXCPP_JOBS=1
 	pattern="-j([0-9]+)"
